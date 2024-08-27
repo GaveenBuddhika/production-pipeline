@@ -1,16 +1,25 @@
-name : Test project
-on: push
+name: Test project
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
+
       - name: Install Node.js
-        with:
-          node-version: '20'
         uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Explicitly use Node.js 20
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests
         run: npm test
+
