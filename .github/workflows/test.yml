@@ -3,7 +3,7 @@ on: push
  paths-ignore:
       - 'README.md'
 
-tjobs:
+jobs:
   test:
     runs-on: ubuntu-latest
     steps:
