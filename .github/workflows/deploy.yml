@@ -1,4 +1,4 @@
- name : deploy project
+ name : Deploy project
  on: workflow_dispatch
     
 jobs:
