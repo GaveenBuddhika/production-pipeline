@@ -14,5 +14,5 @@ jobs:
           script: |
             docker stop foodapp || true
             docker rm foodapp || true
-            dockerr pull gaveenbuddhika/foodapp:latest
+            docker pull gaveenbuddhika/foodapp:latest
             docker run -d -p 80:80 --name foodapp gaveenbuddhika/foodapp:latest
