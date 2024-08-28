@@ -14,7 +14,7 @@ on:
       - main
     paths-ignore:
       - 'README.md'
-      - '.github/workflows/**'
+     
 
 jobs:
   test:
