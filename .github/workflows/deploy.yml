@@ -1,0 +1,18 @@
+ name : deploy project
+ on: workflow_dispatch
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2 instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker stop foodapp || true
+            docker rm foodapp || true
+            dockerr pull gaveenbuddhika/foodapp:latest
+            docker run -d -p 80:80 --name foodapp gaveenbuddhika/foodapp:latest
