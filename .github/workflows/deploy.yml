@@ -1,4 +1,4 @@
-name: First Workflow
+name: Deploy to EC2 instance
 on: workflow_dispatch
 jobs:
   deploy:
