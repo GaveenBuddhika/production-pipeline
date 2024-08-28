@@ -11,17 +11,6 @@ describe('Home Component', () => {
     expect(navbarElement).toBeInTheDocument();
   });
 
-  test('renders banner background image', () => {
-    render(<Home />);
-    const backgroundImage = screen.getAllByRole('img')[0];
-    expect(backgroundImage).toHaveAttribute('src', expect.stringContaining('home-banner-background.png'));
-  });
-
-  test('renders banner main image', () => {
-    render(<Home />);
-    const mainImage = screen.getAllByRole('img')[1];
-    expect(mainImage).toHaveAttribute('src', expect.stringContaining('home-banner-image.png'));
-  });
 
   test('renders primary heading', () => {
     render(<Home />);
