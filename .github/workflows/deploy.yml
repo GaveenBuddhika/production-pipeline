@@ -1,6 +1,6 @@
 name: Deploy to EC2
 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   build-and-deploy:
@@ -10,9 +10,35 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
+          host: ec2-13-60-248-34.eu-north-1.compute.amazonaws.com
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          key: -----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAuX+Aqiia5yeapXxNpm8Ssva5YLah/E/+RrWIH40EqPcFvBon
+gTnlaEUvggOFDFxtN01SU+KFDWsPRmNFRnXowsyCKXXrfxsWtH0sCrmJYSf1NDUs
+6Lsv1Tl8nvu6TAQp0TzySl/Dqsusfvjm0BvGu+A6yeb75c2UG6AkxR3WqJCviMqT
+RKoZylrxAb0PXtFwuyGSrqD8k0k1KxetlrcNtB2VgLHnBAvAUWmCavM0APd5kpNq
+/12FQT82vjF/xKchWW/Y0JIYkFt5CYUQffq3hdQS4jWpyv/OjwHpQcOt3pyi1Wlp
+zc4+JwmA+KCRaRxjZ3E8q4fU3FPzRtCCQh3OdQIDAQABAoIBADk/knPxaC0i2eVs
+wYI2EW1OG9QvSTrXbUBhUgt6uA91fT2aTMrjFVvizlCvyWYROFuy70+YPzvu6J3u
+kTi3twg3mYw2KmHl+FHnt6nvrOhhLpnYN230J0UFIuLmCY7gUg+TYat2dqrFhQ0C
+wClGCUV+ZGZfdSptEeKcv/xdwxvuUyv6abvxT+ibXq7lVUWA5s4yqtIpqCk/r7SF
+k/+G7oHONh/TaUohVKhhJpfizJTF2sGE/kqkSMPp7u+6Rp8ZbUfFTyv4a6WN620j
+TtGnyPLcWPwLZVgOOez9d32OOVMi/kqotc7Ttnrqmkar4dfWpnoWhn/e4UD5ANok
+CdGJsUECgYEA/0gaicAj97U2TxYcOorAXTa3CmWFdPL4fXiBT2yArgYZ0HaUFLZc
+aH2PnutVkZePd36g7V82O118dwCe49V9F2cdR3W0mWQoAlA8Dij6m7Q40AeedUQZ
+A2LaedZo2AI2Ztow44NKf3kVS0xz9HcK0wl4xJrfY+FUGjY3ug8pL/0CgYEAugUh
+EU9Te1cyQqkg14bBdb8tLwsbjQ6pJwaWkFK6b6s4mc2FUO39hySa5S5xDPatjS+e
+WXtdcVOJzqEhOTe9G60uww4rSpiM3DgmQOvWr/khZthoqRrKhKhgloqydg5DiT5x
+JV6rrHiHHeL6Gu/Iu1DE8prazUbppli0eduT9dkCgYAnhl9tgo1PFgSRnCfEvKTq
+CcWvW2adY90reBP1WyRVTWaDy0hEKLQIDaDGB0PZZfD1nGqINhysdl4GAteXCP/0
+Nqfm34eV1FcJfKi/vIKIxw+gzf0vxNpmltCi2pqjDzyjEhdNso8/S10Lqouthxzq
+7eV/80axLTsbT9ey/BPxdQKBgGhz+N1/baEUlWRZE9fyEy/K6dRAqHfMg68mQ+VG
+jumle2LhxLps6K+6HkASk+hzm4Br/L7CRvYbsoYUdFNsuQORe3CLxENe5bnCzbgm
+taaafecCHcLXCGD1K0ddGliwKbwnE+GoBz4Rb82YZlg5zL1h3TVdPv+Fki2WIcFL
+SwoBAoGBAKh9fZCRLU9obDQOq8hDyYrVAe2J0/29Dm31Cc6RvZu7XXnfaaoqrKUY
+TXQcnICIgZZg9gPqC0Qa5PgZ7cSOWGzeUJaTrkuNgpZxLZfHgJ3eu3BKHFp5YeKp
+uLFJCNFHelv8lwNZZaVDLlYrNzjs1DrwulrtR9+vv/2l1mwlk1tB
+-----END RSA PRIVATE KEY-----
           script: |
             sudo docker pull gaveenbuddhika/foodapp:latest
             sudo docker stop foodapp || true
