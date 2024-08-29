@@ -1,12 +1,6 @@
 name: Build and Push Docker Image to Docker Hub
 
-on:
-  push:
-    branches:
-      - main
-
-    paths-ignore:
-      - 'README.md'
+on: workflow_dispatch
 
 jobs:
   build:
