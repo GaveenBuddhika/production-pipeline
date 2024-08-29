@@ -1,4 +1,4 @@
-#
+# Automated CI/CD with Docker, AWS, and NGINX.
 
 ## Automated Docker Image Building and Pushing to Docker Hub:
 
