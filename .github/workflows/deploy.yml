@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to EC2 instance
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker stop foodapp || true
-            docker rm foodapp || true
-            docker pull gaveenbuddhika/foodapp:latest
-            docker run -d -p 80:80 --name foodapp gaveenbuddhika/foodapp:latest
+            sudo docker stop foodapp || true
+            sudo docker rm foodapp || true
+            sudo docker pull gaveenbuddhika/foodapp:latest
+            sudo docker run -d -p 80:80 --name foodapp gaveenbuddhika/foodapp:latest
