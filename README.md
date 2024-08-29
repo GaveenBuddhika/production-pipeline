@@ -1,3 +1,5 @@
+#
+
 ## Automated Docker Image Building and Pushing to Docker Hub:
 
 - Set up a pipeline to automatically build Docker images.
@@ -25,7 +27,7 @@
 
 - Implemented branch rules on the main branch that require pull request approvals and status checks to maintain code quality.
 
-# Frontend Application Pipeline:
+## Frontend Application Pipeline:
 
 - Developed a pipeline to build the frontend application.
 - Deployed the frontend to an NGINX server, ensuring that the latest version is always available to users.
